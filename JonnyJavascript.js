@@ -18,6 +18,7 @@ prompt.get(['link', 'path'], function (err, result) {
       })
         .then(output => {
             const url = output.formats[0].url;
+            console.log(url)
             fetch(url).then((resp) => {
                 resp.arrayBuffer().then((ab) => {
                     const buffer = Buffer.from(ab);
